@@ -1,0 +1,542 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(230, 62%, 56%);
+  --title-color: hsl(230, 70%, 16%);
+  --text-color: hsl(230, 16%, 45%);
+  --border-color: hsl(230, 50%, 90%);
+  --white-color: hsl(0, 0%, 100%);
+  --body-color: hsl(230, 100%, 96%);
+  --container-color: hsl(230, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Montagu Slab", serif;
+  --biggest-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color 0.4s;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+
+/*========== 
+	Color changes in some parts of 
+	the website, in dark theme
+==========*/
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1220px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  /* place-items: center; */
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  font-family: var(--second-font);
+  margin-bottom: 2rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+  transition: box-shadow 0.4s background-color 0.4s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+/* .nav__logo i {
+  font-size: 1.3rem;
+} */
+/* .nav__logo {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-family: var(--title-font);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  transition: color 0.3s;
+} */
+
+.nav__logo img {
+  width: 30px;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    box-shadow: 0 -8px 32px hsla(0, 0%, 0%, 0.1);
+    padding: 1.25rem 4rem;
+    transition: background-color 0.4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__link {
+  font-size: 10px;
+  color: var(--text-color);
+  transition: color 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .nav__link span {
+  display: none;
+} */
+
+.nav__link i {
+  font-size: 1.2rem;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav__actions i {
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.nav__actions i:hover {
+  color: var(--first-color);
+}
+/* Add shadow header */
+.shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.1);
+}
+/* Active link */
+.active-link {
+  color: var(--first-color);
+}
+
+/*=============== HOME ===============*/
+.home__swiper {
+  margin: initial;
+}
+
+.home__container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  margin-bottom: 1rem;
+}
+
+.home__description {
+  margin-bottom: 2rem;
+}
+
+.home__images {
+  display: grid;
+}
+
+.home__article,
+.home__img {
+  width: 220px;
+  transition: scale 0.5s;
+}
+
+.home__article {
+  scale: 0.8;
+}
+/* Swiper class */
+.swiper-slide-active,
+.swiper-slide-active-duplicate {
+  scale: 1;
+}
+
+/*=============== BUTTON ===============*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem 1.5rem;
+  transition: box-shadow 0.5s;
+}
+
+.button:hover {
+  box-shadow: 0 4px 32px hsla(230, 72%, 32%, 0.4);
+}
+/*=============== SOCIAL ===============*/
+.socialmedia__container {
+  row-gap: 3rem;
+}
+.socialmedia__card {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin: 20px;
+  background: #fff;
+  text-align: center;
+  font-size: 50px;
+  line-height: 100px;
+  font-family: sans-serif;
+  overflow: hidden;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150, 0.3);
+  transition: all 0.3s ease-out;
+}
+
+.icon:hover {
+  width: 400px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #fff;
+}
+.icon:hover i {
+  color: #fff;
+}
+/* color social media style */
+.icon .ri-facebook-fill {
+  color: #1877f2;
+}
+
+.fb:hover {
+  background: #1877f2;
+}
+.icon .ri-twitter-x-fill {
+  color: #14171a;
+}
+
+.twt:hover {
+  background: #14171a;
+}
+.icon .ri-instagram-fill {
+  color: #e1306c;
+}
+
+.ig:hover {
+  background: #e1306c;
+}
+.icon .ri-discord-fill {
+  color: #7289da;
+}
+
+.dsc:hover {
+  background: #7289da;
+}
+
+.icon .ri-youtube-fill {
+  color: #ff0000;
+}
+
+.yt:hover {
+  background: #ff0000;
+}
+.icon .ri-tiktok-fill {
+  color: #000000;
+}
+
+.tk:hover {
+  background: #000000;
+}
+.icon .ri-threads-fill {
+  color: #000000;
+}
+
+.thd:hover {
+  background: #000000;
+}
+
+/*=============== FEATURED ===============*/
+
+/* Swiper class */
+
+/*=============== DISCOUNT ===============*/
+
+/*=============== NEW ===============*/
+
+/*=============== JOIN ===============*/
+
+/*=============== TESTIMONIAL ===============*/
+
+/*=============== FOOTER ===============*/
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  border-radius: 0.5rem;
+  background-color: hsl(230, 16%, 85%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(230, 16%, 65%);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(230, 16%, 55%);
+}
+/*=============== SCROLL UP ===============*/
+
+/* Show Scroll Up */
+
+/*=============== BREAKPOINTS ===============*/
+@media only screen and (min-width: 320px) and (max-width: 992px) {
+  .socialmedia__card {
+    flex-direction: column;
+  }
+}
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .nav__menu {
+    padding-inline: 3rem;
+  }
+}
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .nav__menu {
+    width: 380px;
+    margin-inline: auto;
+  }
+
+  .home__container {
+    grid-template-columns: 420px;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    column-gap: 3rem;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .home__container {
+    grid-template-columns: 580px;
+  }
+
+  .home__data {
+    width: 420px;
+    justify-self: center;
+  }
+  /* .services__container {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 5rem;
+  } */
+}
+/* For large devices */
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-block: 7rem 2rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 4rem;
+  }
+
+  .nav__link {
+    font-size: var(--normal-font-size);
+  }
+
+  .nav__link i {
+    display: none;
+  }
+
+  .nav__link span {
+    display: block;
+  }
+
+  .nav__menu {
+    width: initial;
+    margin-inline: auto 0;
+  }
+
+  .nav__list {
+    column-gap: 4rem;
+  }
+
+  .nav__link {
+    font-weight: var(--font-medium);
+  }
+  .home__data {
+    width: initial;
+  }
+  /* .services__container {
+    column-gap: 10rem;
+  } */
+}
+
+@media screen and (min-width: 1250px) {
+  .container {
+    margin-inline: auto;
+  }
+  .home__container {
+    grid-template-columns: 435px 745px;
+    align-items: center;
+    padding-block: 7rem 2rem;
+  }
+
+  .home__data {
+    text-align: initial;
+  }
+
+  .home__description {
+    margin-bottom: 4rem;
+  }
+
+  .home__article,
+  .home__img {
+    width: 290px;
+  }
+}
