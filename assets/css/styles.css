@@ -317,7 +317,7 @@ img {
   margin: 20px;
   background: #fff;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 100px;
   font-family: sans-serif;
   overflow: hidden;
@@ -326,7 +326,7 @@ img {
 }
 
 .icon:hover {
-  width: 400px;
+  width: 250px;
   cursor: pointer;
   display: flex;
   justify-content: space-evenly;
@@ -334,6 +334,13 @@ img {
   color: #fff;
 }
 .icon:hover i {
+  color: #fff;
+}
+.icon span {
+  color: #fff;
+}
+
+.icon:hover span {
   color: #fff;
 }
 /* color social media style */
@@ -388,11 +395,45 @@ img {
   background: #000000;
 }
 
-/*=============== FEATURED ===============*/
+/*=============== ABOUT ===============*/
+.about__container {
+  row-gap: 2.5rem;
+}
+.about__img {
+  width: 220px;
+  border-radius: 1.5rem;
+  justify-self: center;
+}
+.about__data {
+  text-align: center;
+}
+.about__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.about__box {
+  background-color: var(--container-color);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.5rem;
+}
+.about__icon {
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+.about__title {
+  font-size: var(--smaller-font-size);
+}
+.about__subtitle {
+  font-size: var(--tiny-font-size);
+}
+.about__description {
+  margin-bottom: 2rem;
+}
 
-/* Swiper class */
-
-/*=============== DISCOUNT ===============*/
+/*=============== STORE ===============*/
 
 /*=============== NEW ===============*/
 
@@ -436,6 +477,10 @@ img {
   .nav__menu {
     padding-inline: 3rem;
   }
+
+  .about__info {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 /* For medium devices */
 @media screen and (min-width: 576px) {
@@ -447,6 +492,14 @@ img {
   .home__container {
     grid-template-columns: 420px;
     justify-content: center;
+  }
+
+  .about__info {
+    grid-template-columns: repeat(3, 140px);
+    justify-content: center;
+  }
+  .about__description {
+    padding: 0 5rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -512,9 +565,28 @@ img {
   .home__data {
     width: initial;
   }
-  /* .services__container {
-    column-gap: 10rem;
-  } */
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+  }
+  .about__img {
+    width: 400px;
+  }
+  .about__data {
+    text-align: initial;
+  }
+  .about__info {
+    justify-content: initial;
+  }
+  .about__box {
+    text-align: center;
+    padding: 1rem 1.25rem;
+  }
+  .about__description {
+    padding: 0 4rem 0 0;
+    margin-bottom: 2.5rem;
+  }
 }
 
 @media screen and (min-width: 1250px) {
