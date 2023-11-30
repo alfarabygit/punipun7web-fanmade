@@ -26,3 +26,46 @@ let swiperHome = new Swiper(".home__swiper", {
     // },
   },
 });
+
+/*==================== CAREER TABS ====================*/
+const tabs = document.querySelectorAll("[data-target]"),
+  tabContents = document.querySelectorAll("[data-content]");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = document.querySelector(tab.dataset.target);
+
+    tabContents.forEach((tabContent) => {
+      tabContent.classList.remove("career__active");
+    });
+    target.classList.add("career__active");
+
+    tabs.forEach((tab) => {
+      tab.classList.remove("career__active");
+    });
+    tab.classList.add("career__Active");
+  });
+});
+
+/*==================== SERVICES MODAL ====================*/
+const modalViews = document.querySelectorAll(".portfolio__modal"),
+  modalButtons = document.querySelectorAll(".portfolio__button"),
+  modalClose = document.querySelectorAll(".portfolio__modal-close");
+
+let modal = function (modalClick) {
+  modalViews[modalClick].classList.add("active-modal");
+};
+
+modalButtons.forEach((mb, i) => {
+  mb.addEventListener("click", () => {
+    modal(i);
+  });
+});
+
+modalClose.forEach((mc, i) => {
+  mc.addEventListener("click", () => {
+    modalViews.forEach((mv, i) => {
+      mv.classList.remove("active-modal");
+    });
+  });
+});
