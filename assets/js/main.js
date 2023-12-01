@@ -43,11 +43,11 @@ tabs.forEach((tab) => {
     tabs.forEach((tab) => {
       tab.classList.remove("career__active");
     });
-    tab.classList.add("career__Active");
+    tab.classList.add("career__active");
   });
 });
 
-/*==================== SERVICES MODAL ====================*/
+/*==================== PORTFOLIO MODAL ====================*/
 const modalViews = document.querySelectorAll(".portfolio__modal"),
   modalButtons = document.querySelectorAll(".portfolio__button"),
   modalClose = document.querySelectorAll(".portfolio__modal-close");
