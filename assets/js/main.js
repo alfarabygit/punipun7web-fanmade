@@ -13,7 +13,7 @@ let swiperHome = new Swiper(".home__swiper", {
   centeredSlides: "auto",
 
   autoplay: {
-    delay: 3000,
+    delay: 4000,
     disableOnInteraction: false,
   },
   breakpoints: {
@@ -69,3 +69,65 @@ modalClose.forEach((mc, i) => {
     });
   });
 });
+
+/*=============== STORE 1 SWIPER ===============*/
+let swiperStore1 = new Swiper(".store1__swiper", {
+  loop: true,
+  spaceBetween: 16,
+  grabCursor: true,
+  slidesPerView: "auto",
+  centeredSlides: "auto",
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      centeredSlides: false,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 48,
+    },
+  },
+});
+
+/*=============== STORE 2 SWIPER ===============*/
+let swiperStore2 = new Swiper(".store2__swiper", {
+  loop: true,
+  spaceBetween: 16,
+  slidesPerView: "auto",
+
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 48,
+    },
+  },
+});
+
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 3000,
+  delay: 300,
+  // reset:true,
+});
+
+//Home Page
+sr.reveal(`.home__data, .socialmedia__container`);
+sr.reveal(`.home__images`, { delay: 300 });
+
+//About Page
+sr.reveal(`.about__img`, { origin: "left" });
+sr.reveal(`.about__description`, { delay: 300, origin: "right" });
+sr.reveal(`.about__btn`, { delay: 500 });
+
+//Store page
+sr.reveal(`.store1__container, .store2__container`, { delay: 500, origin: "bottom" });

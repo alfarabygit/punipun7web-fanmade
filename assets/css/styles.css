@@ -644,7 +644,103 @@ img {
   opacity: 1;
   visibility: visible;
 }
-/*=============== STORE ===============*/
+/*=============== STORE 1 ===============*/
+.store1__card {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 2rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  transition: border 0.4s background-color 0.4s;
+}
+.store1__img {
+  width: 150px;
+  margin: 0 auto 0.75rem;
+}
+
+.store1__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.store1__prices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.store1__price {
+  color: var(--title-color);
+}
+
+.store1__card .button {
+  cursor: pointer;
+}
+
+.store1__card:hover .featured__actions {
+  right: 1.5rem;
+}
+/* Swiper class */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: border 0.4s background-color 0.4s;
+}
+
+/*=============== STORE 2 ===============*/
+.store2__card {
+  display: flex;
+  align-items: center;
+  column-gap: 2.5rem;
+  background-color: var(--container-color);
+  padding: 1.5rem 1rem;
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  transition: border 0.5s background-color 0.5s;
+}
+
+.store2__card:hover {
+  border: 2px solid var(--text-color);
+}
+
+.store2__img {
+  width: 100px;
+}
+
+.store2__title {
+  font-size: var(--h2-font-size);
+  margin: 0.5rem;
+}
+
+.store2__prices {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.store2__price {
+  color: var(--title-color);
+  margin-left: 1.2rem;
+}
+
+.store2__swiper:nth-child(1) {
+  margin-bottom: 2rem;
+}
 
 /*=============== EVENTS ===============*/
 
@@ -703,8 +799,18 @@ img {
   .portfolio__modal {
     padding: 0 0.5rem;
   }
+  .store2__card {
+    flex-direction: column;
+  }
 }
+
 /* For medium devices */
+@media screen and (min-width: 450px) {
+  .store2__card {
+    width: 390px;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .nav__menu {
     width: 380px;
@@ -835,6 +941,29 @@ img {
   }
   .portfolio__container {
     grid-template-columns: repeat(4, 300px);
+  }
+  .store1__container {
+    padding-top: 2rem;
+  }
+
+  .store1__title {
+    font-size: var(--h3-font-size);
+  }
+
+  .store2__container {
+    padding-top: 2rem;
+  }
+
+  .store2__card {
+    padding: 1.5rem;
+  }
+
+  .store2__img {
+    width: 120px;
+  }
+
+  .store2__title {
+    font-size: var(--h3-font-size);
   }
 }
 
