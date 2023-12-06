@@ -563,7 +563,7 @@ body.dark-theme {
 
 .portfolio__modal-icon {
   color: var(--first-color);
-  margin-right: var(--mb-0-25);
+  margin-right: var(--mb-2);
 }
 /* Active Modal */
 .active-modal {
@@ -931,7 +931,7 @@ body.dark-theme {
     justify-content: center;
   }
   .career__button {
-    margin: 0 var(--mb-1);
+    margin: 0 var(--mb-2);
   }
   .career__section {
     grid-template-columns: 0.5fr;
