@@ -15,6 +15,7 @@
   --white-color: hsl(0, 0%, 100%);
   --body-color: hsl(230, 100%, 96%);
   --container-color: hsl(230, 100%, 97%);
+
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
@@ -27,17 +28,6 @@
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
 
-  /*========== Margenes Bottom ==========*/
-  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-  --mb-0-25: 0.25rem;
-  --mb-0-5: 0.5rem;
-  --mb-0-75: 0.75rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  --mb-2-5: 2.5rem;
-  --mb-3: 3rem;
-
   /*========== Font weight ==========*/
   --font-regular: 400;
   --font-medium: 500;
@@ -47,6 +37,12 @@
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
+
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
 }
 
 /*========== Responsive typography ==========*/
@@ -117,12 +113,35 @@ img {
 
 /*=============== THEME ===============*/
 /*========== Variables Dark theme ==========*/
-
+body.dark-theme {
+  --title-color: hsl(230, 48%, 85%);
+  --text-color: hsl(230, 16%, 70%);
+  --border-color: hsl(230, 12%, 18%);
+  --body-color: hsl(230, 12%, 8%);
+  --container-color: hsl(230, 12%, 12%);
+}
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
-
+.dark-theme .shadow-header {
+  box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.4);
+}
+.dark-theme .nav__menu {
+  box-shadow: 0 -8px 32px hsla(0, 0%, 0%, 0.4);
+}
+.dark-theme .scrollup {
+  box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.4);
+}
+.dark-theme::-webkit-scrollbar {
+  background-color: hsl(230, 16%, 15%);
+}
+.dark-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(230, 16%, 25%);
+}
+.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(230, 16%, 35%);
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1220px;
@@ -132,7 +151,6 @@ img {
 .grid {
   display: grid;
   gap: 1.5rem;
-  /* place-items: center; */
 }
 
 .section {
@@ -143,7 +161,7 @@ img {
   text-align: center;
   font-size: var(--h1-font-size);
   font-family: var(--second-font);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .main {
@@ -168,83 +186,89 @@ img {
   align-items: center;
 }
 
+.nav__logo,
+.nav__toggle,
+.nav__close {
+  display: flex;
+  color: var(--title-color);
+}
+
 .nav__logo {
   display: inline-flex;
   align-items: center;
   column-gap: 0.5rem;
-  color: var(--first-color);
+  font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
+  transition: color 0.3s;
 }
-
-/* .nav__logo i {
-    font-size: 1.3rem;
-  } */
-/* .nav__logo {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-    font-family: var(--title-font);
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-semi-bold);
-    transition: color 0.3s;
-  } */
 
 .nav__logo img {
   width: 30px;
 }
 
+.nav__logo:hover {
+  color: var(--first-color);
+}
+
 /* Navigation for mobile devices */
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 768px) {
   .nav__menu {
     position: fixed;
-    bottom: 0;
+    top: -100%;
     left: 0;
-    right: 0;
+    background-color: var(--body-color);
     width: 100%;
-    background-color: var(--container-color);
-    box-shadow: 0 -8px 32px hsla(0, 0%, 0%, 0.1);
-    padding: 1.25rem 4rem;
-    transition: background-color 0.4s;
+    box-shadow: 0 8px 20px hsla(20, 65%, 25%, 0.2);
+    padding-block: 3.5rem;
+    transition: top 0.4s;
   }
 }
 
 .nav__list {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 3rem;
 }
 
 .nav__link {
-  font-size: 10px;
-  color: var(--text-color);
-  transition: color 0.4s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav__link i {
-  font-size: 1.2rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: color 0.5s;
 }
 
 .nav__link:hover {
   color: var(--first-color);
 }
 
-.nav__actions {
+.nav__close {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+.nav__buttons {
   display: flex;
   align-items: center;
   column-gap: 1rem;
 }
 
-.nav__actions i {
+.nav__buttons i {
   font-size: 1.3rem;
   cursor: pointer;
   transition: color 0.5s;
 }
 
-.nav__actions i:hover {
+.nav__buttons i:hover {
   color: var(--first-color);
 }
+
+/* Show menu */
+.show-menu {
+  top: 0;
+}
+
 /* Add shadow header */
 .shadow-header {
   box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.3);
@@ -343,101 +367,6 @@ img {
 .button-white:hover {
   background-color: #fff;
 }
-
-/*=============== SOCIAL ===============*/
-/* .socialmedia__container {
-  row-gap: 3rem;
-}
-.socialmedia__card {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-.icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  margin: 20px;
-  background: #fff;
-  text-align: center;
-  font-size: 40px;
-  line-height: 100px;
-  font-family: sans-serif;
-  overflow: hidden;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150, 0.3);
-  transition: all 0.3s ease-out;
-}
-
-.icon:hover {
-  width: 250px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: #fff;
-}
-.icon:hover i {
-  color: #fff;
-}
-.icon span {
-  color: #fff;
-}
-
-.icon:hover span {
-  color: #fff;
-} */
-/* color social media style */
-/* .icon .ri-facebook-fill {
-  color: #1877f2;
-}
-
-.fb:hover {
-  background: #1877f2;
-}
-.icon .ri-twitter-x-fill {
-  color: #14171a;
-}
-
-.twt:hover {
-  background: #14171a;
-}
-.icon .ri-instagram-fill {
-  color: #e1306c;
-}
-
-.ig:hover {
-  background: #e1306c;
-}
-.icon .ri-discord-fill {
-  color: #7289da;
-}
-
-.dsc:hover {
-  background: #7289da;
-}
-
-.icon .ri-youtube-fill {
-  color: #ff0000;
-}
-
-.yt:hover {
-  background: #ff0000;
-}
-.icon .ri-tiktok-fill {
-  color: #000000;
-}
-
-.tk:hover {
-  background: #000000;
-}
-.icon .ri-threads-fill {
-  color: #000000;
-}
-
-.thd:hover {
-  background: #000000;
-} */
-
 /*=============== ABOUT ===============*/
 .about__container {
   row-gap: 3rem;
@@ -535,7 +464,7 @@ img {
   transform: translate(6px, -7px);
 }
 
-.career [data-content] {
+/* .career [data-content] {
   display: none;
 }
 
@@ -544,8 +473,8 @@ img {
 }
 .career__button.career__active {
   color: var(--first-color);
-}
-/*=============== BACKGROUND & PORTFOLIO ===============*/
+} */
+/*=============== PORTFOLIO ===============*/
 .portfolio__container {
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
@@ -652,7 +581,7 @@ img {
 }
 
 .store__title {
-  margin: 1rem;
+  margin-bottom: 1rem;
 }
 
 .store__description {
@@ -670,10 +599,10 @@ img {
 }
 
 .store__img-1 {
-  transform: translateX(1rem) rotate(-10deg);
+  transform: translateX(1rem) rotate(-15deg);
 }
 .store__img-2 {
-  transform: translateX(-1rem) rotate(10deg);
+  transform: translateX(-1rem) rotate(15deg);
   margin-left: 3.5rem;
 }
 
@@ -800,9 +729,67 @@ img {
   background-color: var(--title-color);
 }
 /*=============== GALLERY ===============*/
+.gallery__container {
+  row-gap: 3rem;
+  margin-bottom: 3rem;
+}
 
+.gallery__img {
+  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.gallery__img img {
+  transition: 1s;
+}
+
+.gallery__img img:hover {
+  transform: scale(1.1);
+}
+
+/* fancybox caption */
+.fancybox__slide.has-caption {
+  text-align: center;
+  color: #fff;
+}
+
+.fancybox__caption {
+  padding: 1rem 3rem 1rem 1rem;
+}
 /*=============== FOOTER ===============*/
+.footer {
+  padding-block: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+}
+/* .footer__container {
+  row-gap: 2.5rem;
+} */
 
+.footer__title {
+  font-size: 2rem;
+  margin-bottom: var(--mb-2);
+}
+
+.footer__social {
+  margin-bottom: var(--mb-2);
+}
+
+.footer__social-link {
+  font-size: 1.25rem;
+  color: var(--first-color);
+  margin: 0 var(--mb-2);
+  transition: transform 0.5s;
+}
+
+/* .footer__social-link:hover {
+  transform: translateY(1rem);
+} */
+
+.footer__copy {
+  font-size: var(--small-font-size);
+}
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -842,21 +829,18 @@ img {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* @media only screen and (min-width: 320px) and (max-width: 992px) {
-  .socialmedia__card {
-    flex-direction: column;
-  }
-} */
 /* For small devices */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 340px) {
   .container {
     margin-inline: 1rem;
   }
 
+  .section {
+    padding-block: 4rem 1rem;
+  }
   .nav__menu {
     padding-inline: 3rem;
   }
-
   .about__info {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -886,7 +870,6 @@ img {
     padding: 1rem;
   }
 }
-
 /* For medium devices */
 @media screen and (min-width: 450px) {
   .merchandise__card {
@@ -896,10 +879,9 @@ img {
 
 @media screen and (min-width: 576px) {
   .nav__menu {
-    width: 380px;
+    width: 400px;
     margin-inline: auto;
   }
-
   .home__container,
   .store__container {
     grid-template-columns: 420px;
@@ -919,10 +901,16 @@ img {
     justify-content: center;
   }
 }
+
 @media screen and (min-width: 768px) {
   .nav {
     column-gap: 3rem;
   }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
   .nav__list {
     flex-direction: row;
     column-gap: 3rem;
@@ -966,6 +954,11 @@ img {
   .events__content {
     margin-inline: 3rem;
   }
+  .gallery__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding-top: 2rem;
+  }
 }
 /* For large devices */
 @media screen and (min-width: 1200px) {
@@ -980,16 +973,8 @@ img {
 
   .nav__link {
     font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
   }
-
-  .nav__link i {
-    display: none;
-  }
-
-  /* .nav__link span {
-      display: block;
-    } */
-
   .nav__menu {
     width: initial;
     margin-inline: auto 0;
@@ -999,9 +984,6 @@ img {
     column-gap: 4rem;
   }
 
-  .nav__link {
-    font-weight: var(--font-medium);
-  }
   .home__data {
     width: initial;
   }
@@ -1072,6 +1054,13 @@ img {
   }
   .events__container {
     max-width: 1200px;
+  }
+  .gallery__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+  .footer {
+    padding-block: 6rem 3rem;
   }
   .scrollup {
     right: 3rem;

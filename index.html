@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/images/cat.png" type="image/x-icon" />
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
 
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
     <!--=============== AOS CSS ===============-->
     <link rel="stylesheet" href="assets/css/aos.css" />
     <!--=============== FANCYBOX CSS ===============-->
@@ -26,57 +27,43 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo"> <img src="assets/images/cat.png" alt="" /> Punipun7 Web Fanmade </a>
+        <a href="#" class="nav__logo"> Punipun7 Web Fanmade </a>
 
-        <div class="nav__menu">
+        <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link active-link">
-                <i class="ri-home-fill"></i>
-                <span>Home</span>
-              </a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
-
             <li class="nav__item">
-              <a href="#about" class="nav__link">
-                <i class="ri-user-fill"></i>
-                <span>About</span>
-              </a>
+              <a href="#about" class="nav__link">About</a>
             </li>
-
             <li class="nav__item">
-              <a href="#profile" class="nav__link">
-                <i class="ri-archive-fill"></i>
-                <span>Profile</span>
-              </a>
+              <a href="#profile" class="nav__link">Profile</a>
             </li>
-
             <li class="nav__item">
-              <a href="#store" class="nav__link">
-                <i class="ri-store-fill"></i>
-                <span>Store</span>
-              </a>
+              <a href="#store" class="nav__link">Store</a>
             </li>
-
             <li class="nav__item">
-              <a href="#events" class="nav__link">
-                <i class="ri-calendar-fill"></i>
-                <span>Event</span>
-              </a>
+              <a href="#events" class="nav__link">Events</a>
             </li>
-
             <li class="nav__item">
-              <a href="#gallery" class="nav__link">
-                <i class="ri-gallery-fill"></i>
-                <span>Gallery</span>
-              </a>
+              <a href="#gallery" class="nav__link">Gallery</a>
             </li>
           </ul>
+
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
         </div>
 
-        <div class="nav__actions">
-          <!-- light/dark button -->
+        <div class="nav__buttons">
+          <!-- Dark/Light mode button -->
           <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-fill"></i>
+          </div>
         </div>
       </nav>
     </header>
@@ -104,7 +91,7 @@
                   <img src="assets/images/Emilia.jpg" alt="" class="home__img" />
                 </article>
                 <article class="home__article swiper-slide">
-                  <img src="assets/images/Himeko 1.png" alt="" class="home__img" />
+                  <img src="assets/images/CosuTaku_Punipun_KizunaAi_5.jpg" alt="" class="home__img" />
                 </article>
                 <article class="home__article swiper-slide">
                   <img src="assets/images/CosuTaku_Punipun_Ganyu 7.jpg" alt="" class="home__img" />
@@ -114,7 +101,7 @@
                 </article>
 
                 <article class="home__article swiper-slide">
-                  <img src="assets/images/Kimono Orange 9.jpg" alt="" class="home__img" />
+                  <img src="assets/images/Rem.jpg" alt="" class="home__img" />
                 </article>
                 <article class="home__article swiper-slide">
                   <img src="assets/images/Dorothy.png" alt="" class="home__img" />
@@ -134,49 +121,6 @@
         </div>
       </section>
 
-      <!--==================== Social Media ====================-->
-      <!-- <section class="social section">
-        <h2 class="section__title">Punipun7 Social Media</h2>
-        <div class="socialmedia__container container grid">
-          <article class="socialmedia__card">
-            <div class="icon fb">
-              <i class="ri-facebook-fill"></i>
-              <a href="http://facebook.com/punipun07" target="_blank"> <span>Punipun7</span> </a>
-            </div>
-           
-            <div class="icon twt">
-              <i class="ri-twitter-x-fill"></i>
-              <a href="http://twitter.com/punipun7" target="_blank"><span>Punipun7</span> </a>
-            </div>
-       
-            <div class="icon ig">
-              <i class="ri-instagram-fill"></i>
-              <a href="http://instagram.com/punipun7" target="_blank"> <span>Punipun7</span> </a>
-            </div>
-          
-            <div class="icon dsc">
-              <i class="ri-discord-fill"></i>
-              <a href="https://bit.ly/DiscordPunipun" target="_blank"> <span>Punipun7</span> </a>
-            </div>
-            
-            <div class="icon yt">
-              <i class="ri-youtube-fill"></i>
-              <a href="https://www.youtube.com/c/ClarissaPunipun/?sub_confirmation=1" target="_blank"> <span>Punipun7</span></a>
-            </div>
-          
-            <div class="icon tk">
-              <i class="ri-tiktok-fill"></i>
-              <a href="https://vt.tiktok.com/reC2XH/" target="_blank"><span>Punipun7</span> </a>
-            </div>
-       
-            <div class="icon thd">
-              <i class="ri-threads-fill"></i>
-              <a href="http://threads.net/punipun7" target="_blank"> <span>Punipun7</span> </a>
-            </div>
-          </article>
-        </div>
-      </section> -->
-
       <!--==================== ABOUT ====================-->
       <section class="about section" id="about">
         <h2 class="section__title" data-aos="fade-left">About Me</h2>
@@ -193,21 +137,11 @@
         </div>
       </section>
 
+      <!--==================== PROFILE ====================-->
       <section class="career section" id="profile">
         <h2 class="section__title" data-aos="fade-right">My Profile</h2>
 
         <div class="career__container container">
-          <!-- <div class="career__tabs">
-            <div class="career__button button-flex career__active" data-target="#ocupation">
-              <i class="ri-award-fill career__icon"></i>
-              Talent
-            </div>
-            <div class="career__button button-flex" data-target="#entrepreneurship">
-              <i class="ri-briefcase-4-fill career__icon"></i>
-              Entrepreneurship
-            </div>
-          </div> -->
-
           <div class="career__section">
             <!--==================== CAREER CONTENT 1 ====================-->
             <div class="career__content career__active" data-content id="ocupation">
@@ -363,40 +297,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- <div class="career__content" data-content id="entrepreneurship">
-      
-              <div class="career__data" data-aos="fade-up">
-                <div>
-                  <h3 class="career__title">Cosplayer</h3>
-                  <span class="career__subtitle">Indonesia</span>
-                  <div class="career__calendar">
-                    <i class="ri-calendar-fill"></i>
-                    2006-now
-                  </div>
-                </div>
-
-                <div>
-                  <span class="career__rounder"> </span>
-                  <span class="career__line"> </span>
-                </div>
-              </div>
-            
-              <div class="career__data" data-aos="fade-down">
-                <div></div>
-                <div>
-                  <span class="career__rounder"> </span>
-                </div>
-                <div>
-                  <h3 class="career__title">Owner of Kopi Chuseyo Cibubur & HAKO Studio</h3>
-                  <span class="career__subtitle">Indonesia</span>
-                  <div class="career__calendar">
-                    <i class="ri-calendar-fill"></i>
-                    2020-now
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -618,8 +518,8 @@
           </div>
 
           <div class="store__images">
-            <img src="assets/images/CosuTaku_Punipun_KizunaAi_5.jpg" alt="" class="store__img-1" />
-            <img src="assets/images/Ai Hoshino 2.png" alt="" class="store__img-2" />
+            <img src="assets/images/Ai Hoshino 2.png" alt="" class="store__img-1" />
+            <img src="assets/images/Kashima.jpg" alt="" class="store__img-2" />
           </div>
         </div>
       </section>
@@ -783,6 +683,16 @@
                   <!-- <button class="button">Visit Here</button> -->
                 </div>
               </a>
+              <a href="https://halu.app/star/punipun7" target="_blank" class="merchandise__card swiper-slide">
+                <img src="assets/images/haluapp.jpeg" alt="" class="merchandise__img" />
+                <div>
+                  <h2 class="merchandise">HaluApp</h2>
+                  <!-- <div class="merchandise__prices">
+                    <span class="merchandise__price">Rp.100.000</span>
+                  </div> -->
+                  <!-- <button class="button">Visit Here</button> -->
+                </div>
+              </a>
               <a href="https://punipun.com/international-fs/" target="_blank" class="merchandise__card swiper-slide">
                 <img src="assets/images/fs internasional.jpg" alt="" class="merchandise__img" />
                 <div>
@@ -790,9 +700,9 @@
                 </div>
               </a>
               <a href="https://www.instagram.com/hakobypunipun/" target="_blank" class="merchandise__card swiper-slide">
-                <img src="assets/images/hakobi.png" alt="" class="merchandise__img" />
+                <img src="assets/images/coffee-logo-png-7501.png" alt="" class="merchandise__img" />
                 <div>
-                  <h2 class="merchandise">Kopi Chuseyo x Hako Studio by Punipun</h2>
+                  <h2 class="merchandise">Hakobi Punipun</h2>
                   <!-- <div class="merchandise__prices">
                     <span class="merchandise__price">Rp.100.000</span>
                   </div> -->
@@ -803,7 +713,6 @@
           </div>
         </div>
       </section>
-
       <!--==================== EVENTS ====================-->
       <section class="events section" id="events">
         <h2 class="section__title">Upcoming Events</h2>
@@ -873,11 +782,68 @@
       <!--==================== GALLERY ====================-->
       <section class="gallery section" id="gallery">
         <h2 class="section__title">Gallery Events</h2>
+
+        <div class="gallery__container container grid">
+          <a href="assets/images/ICC x DGCon Oct 2023.png" class="gallery__img" data-aos="flip-left" data-fancybox="gallery" data-caption="Guest Cosplayer ICC x DGCon Oct 2023">
+            <img src="assets/images/ICC x DGCon Oct 2023.png" alt="" />
+          </a>
+          <a href="assets/images/Comipara Yogyakarta Nov 2023.png" class="gallery__img" data-aos="flip-left" data-fancybox="gallery" data-caption="Guest Cosplayer Comipara Yogyakarta Nov 2023">
+            <img src="assets/images/Comipara Yogyakarta Nov 2023.png" alt="" />
+          </a>
+          <a href="assets/images/Fundome Surabaya Dec 2023.png" class="gallery__img" data-aos="flip-left" data-fancybox="gallery" data-caption="Guest Cosplayer Fundome Surabaya Dec 2023">
+            <img src="assets/images/Fundome Surabaya Dec 2023.png" alt="" />
+          </a>
+          <a href="assets/images/Guest Cosplayer Matsuri Pekanbaru 2016.jpg" class="gallery__img" data-aos="flip-right" data-fancybox="gallery" data-caption="Guest Cosplayer Matsuri Pekanbaru 2016">
+            <img src="assets/images/Guest Cosplayer Matsuri Pekanbaru 2016.jpg" alt="" />
+          </a>
+          <a href="assets/images/Guest Cosplayer Mal Ska pekanbaru 2014.png" class="gallery__img" data-aos="flip-right" data-fancybox="gallery" data-caption="Guest Cosplayer Mal Ska pekanbaru 2014">
+            <img src="assets/images/Guest Cosplayer Mal Ska pekanbaru 2014.png" alt="" />
+          </a>
+          <a href="assets/images/Guest Cosplayer udana bali 2019.jpg" class="gallery__img" data-aos="flip-right" data-fancybox="gallery" data-caption="Guest Cosplayer udana bali 2019">
+            <img src="assets/images/Guest Cosplayer udana bali 2019.jpg" alt="" />
+          </a>
+          <a href="assets/images/Guest Star cosplayer makassar 2016.jpg" class="gallery__img" data-aos="zoom-in" data-fancybox="gallery" data-caption="Guest Star cosplayer makassar 2016">
+            <img src="assets/images/Guest Star cosplayer makassar 2016.jpg" alt="" />
+          </a>
+          <a href="assets/images/Guest Star New Year Party pekanbaru 2016.jpg" class="gallery__img" data-aos="zoom-in" data-fancybox="gallery" data-caption="Guest Star New Year Party pekanbaru 2016">
+            <img src="assets/images/Guest Star New Year Party pekanbaru 2016.jpg" alt="" />
+          </a>
+          <a href="assets/images/hoyofest agustus 2023.png" class="gallery__img" data-aos="zoom-in" data-fancybox="gallery" data-caption="Guest Cosplayer Hoyofest Agustus 2023">
+            <img src="assets/images/hoyofest agustus 2023.png" alt="" />
+          </a>
+          <a href="assets/images/Guest Cosplayer Surakarta Oct 2019.jpg" class="gallery__img" data-aos="zoom-out" data-fancybox="gallery" data-caption="Guest Cosplayer Surakarta Oct 2019">
+            <img src="assets/images/Guest Cosplayer Surakarta Oct 2019.jpg" alt="" />
+          </a>
+          <a href="assets/images/Aikari Matsuri SMAN 1 Tambun Nov 2023.png" class="gallery__img" data-aos="zoom-out" data-fancybox="gallery" data-caption="Guest Cosplayer Aikari Matsuri SMAN 1 Tambun Nov 2023">
+            <img src="assets/images/Aikari Matsuri SMAN 1 Tambun Nov 2023.png" alt="" />
+          </a>
+          <a
+            href="assets/images/Guest Cosplayer SMX Convention Center Manila, Philipines Oct 2023.png"
+            class="gallery__img"
+            data-aos="zoom-out"
+            data-fancybox="gallery"
+            data-caption="Guest Cosplayer SMX Convention Center Manila, Philipines Oct 2023"
+          >
+            <img src="assets/images/Guest Cosplayer SMX Convention Center Manila, Philipines Oct 2023.png" alt="" />
+          </a>
+        </div>
       </section>
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <p class="footer__title">Punipun7 Web Fanmade</p>
+      <div class="footer__social">
+        <a href="http://facebook.com/punipun07" target="_blank" class="footer__social-link"> <i class="ri-facebook-circle-line"></i></a>
+        <a href="http://twitter.com/punipun7" target="_blank" class="footer__social-link"> <i class="ri-instagram-line"></i></a>
+        <a href="http://instagram.com/punipun7" target="_blank" class="footer__social-link"> <i class="ri-twitter-x-line"></i></a>
+        <a href="https://bit.ly/DiscordPunipun" target="_blank" class="footer__social-link"> <i class="ri-discord-fill"></i></a>
+        <a href="https://www.youtube.com/c/ClarissaPunipun/?sub_confirmation=1" target="_blank" class="footer__social-link"> <i class="ri-youtube-fill"></i></a>
+        <a href="https://vt.tiktok.com/reC2XH/" target="_blank" class="footer__social-link"> <i class="ri-tiktok-fill"></i></a>
+        <a href="http://threads.net/punipun7" target="_blank" class="footer__social-link"> <i class="ri-threads-fill"></i></a>
+      </div>
+      <p class="footer__copy">&#169; 2023. All rigths reserved</p>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
     <a href="#" class="scrollup" id="scroll-up">
@@ -898,7 +864,7 @@
     <!-- AOS -->
     <script>
       AOS.init({
-        once: false,
+        once: true,
         duration: 1000,
       });
     </script>

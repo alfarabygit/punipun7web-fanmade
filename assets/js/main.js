@@ -1,10 +1,29 @@
-/*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () => {
-  const scrollUp = document.getElementById("scroll-up");
+/*=============== SHOW MENU ===============*/
+const navMenu = document.getElementById("nav-menu"),
+  navToogle = document.getElementById("nav-toggle"),
+  navClose = document.getElementById("nav-close");
 
-  this.scrollY >= 350 ? scrollUp.classList.add("show-scroll") : scrollUp.classList.remove("show-scroll");
+//   menu show if exists
+if (navToogle) {
+  navToogle.addEventListener("click", () => {
+    navMenu.classList.add("show-menu");
+  });
+}
+
+// menu hidden if exists
+if (navClose) {
+  navClose.addEventListener("click", () => {
+    navMenu.classList.remove("show-menu");
+  });
+}
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll(".nav__link");
+
+const linkAction = () => {
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.remove("show-menu");
 };
-window.addEventListener("scroll", scrollUp);
+navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 /*=============== ADD SHADOW HEADER ===============*/
 const ShadowHeader = () => {
@@ -12,48 +31,14 @@ const ShadowHeader = () => {
 
   this.scrollY >= 50 ? header.classList.add("shadow-header") : header.classList.remove("shadow-header");
 };
-/*=============== HOME SWIPER ===============*/
-let swiperHome = new Swiper(".home__swiper", {
-  loop: true,
-  spaceBetween: 24,
-  grabCursor: true,
-  slidesPerView: "auto",
-  centeredSlides: "auto",
 
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    1200: {
-      spaceBetween: 32,
-    },
-    // 768: {
-    //   slidesPerView: 2,
-    //   spaceBetween: 48,
-    // },
-  },
-});
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
 
-/*==================== CAREER TABS ====================*/
-// const tabs = document.querySelectorAll("[data-target]"),
-//   tabContents = document.querySelectorAll("[data-content]");
-
-// tabs.forEach((tab) => {
-//   tab.addEventListener("click", () => {
-//     const target = document.querySelector(tab.dataset.target);
-
-//     tabContents.forEach((tabContent) => {
-//       tabContent.classList.remove("career__active");
-//     });
-//     target.classList.add("career__active");
-
-//     tabs.forEach((tab) => {
-//       tab.classList.remove("career__active");
-//     });
-//     tab.classList.add("career__active");
-//   });
-// });
+  this.scrollY >= 350 ? scrollUp.classList.add("show-scroll") : scrollUp.classList.remove("show-scroll");
+};
+window.addEventListener("scroll", scrollUp);
 
 /*==================== PORTFOLIO MODAL ====================*/
 const modalViews = document.querySelectorAll(".portfolio__modal"),
@@ -78,29 +63,28 @@ modalClose.forEach((mc, i) => {
   });
 });
 
-/*=============== STORE 1 SWIPER ===============*/
-// let swiperStore1 = new Swiper(".store1__swiper", {
-//   loop: true,
-//   spaceBetween: 16,
-//   grabCursor: true,
-//   slidesPerView: "auto",
-//   centeredSlides: "auto",
+/*=============== HOME SWIPER ===============*/
+let swiperHome = new Swiper(".home__swiper", {
+  loop: true,
+  spaceBetween: 24,
+  grabCursor: true,
+  slidesPerView: "auto",
+  centeredSlides: "auto",
 
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-//   breakpoints: {
-//     1200: {
-//       slidesPerView: 4,
-//       centeredSlides: false,
-//     },
-//     768: {
-//       slidesPerView: 2,
-//       spaceBetween: 48,
-//     },
-//   },
-// });
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    1200: {
+      spaceBetween: 32,
+    },
+    // 768: {
+    //   slidesPerView: 2,
+    //   spaceBetween: 48,
+    // },
+  },
+});
 
 /*=============== MERCHANDISE SWIPER ===============*/
 let swiperMerchandise = new Swiper(".merchandise__swiper", {
@@ -205,10 +189,40 @@ sr.reveal(`.about__description`, { delay: 300, origin: "right" });
 sr.reveal(`.about__btn`, { delay: 500 });
 
 //Store page
-// sr.reveal(`.store1__container, .store2__container`, { delay: 500, origin: "bottom" });
 sr.reveal(`.store__data`, { origin: "left" });
 sr.reveal(`.store__images`, { origin: "right" });
 sr.reveal(`.merchandise__container`, { origin: "bottom" });
 
 //Event Page
-// sr.reveal(`.card__container`, { delay: 500, origin: "bottom" });
+sr.reveal(`.events__container`, { delay: 500, origin: "bottom" });
+
+/*=============== DARK LIGHT THEME ===============*/
+const themeButton = document.getElementById("theme-button");
+const darkTheme = "dark-theme";
+const iconTheme = "ri-sun-line";
+
+//previously selected theme(if user selected)
+const selectedTheme = localStorage.getItem("selected-theme");
+const selectedIcon = localStorage.getItem("selected-icon");
+
+//obtain current theme that has interface by validating light theme class in html
+const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
+const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "ri-moon-line" : "ri-sun-line");
+
+//validate if user change theme light or dark theme
+if (selectedTheme) {
+  //if fullfilled, change theme mode
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
+  themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"](iconTheme);
+}
+
+//activate or deactivate manually with theme button
+themeButton.addEventListener("click", () => {
+  //add or remove icon theme
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+
+  //save theme and current icon that user choose
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+});
