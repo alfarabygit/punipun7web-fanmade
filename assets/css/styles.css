@@ -40,6 +40,7 @@
 
   /*===== Margenes =====*/
   --mb-2: 1rem;
+  --mb-1-5: 1.5rem;
   --mb-4: 2rem;
   --mb-5: 2.5rem;
   --mb-6: 3rem;
@@ -440,7 +441,7 @@ body.dark-theme {
 
 .career__subtitle {
   font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2);
 }
 
 .career__calendar {
@@ -497,12 +498,12 @@ body.dark-theme {
   display: block;
   font-size: 1.5rem;
   color: var(--first-color);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2);
 }
 
 .portfolio__title {
   font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-2);
   font-weight: var(--font-medium);
 }
 
