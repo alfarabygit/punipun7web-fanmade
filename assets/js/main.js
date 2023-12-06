@@ -180,7 +180,7 @@ const sr = ScrollReveal({
 });
 
 //Home Page
-sr.reveal(`.home__data, .socialmedia__container`);
+sr.reveal(`.home__data, .socialmedia__container, .footer`);
 sr.reveal(`.home__images`, { delay: 300 });
 
 //About Page
