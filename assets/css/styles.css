@@ -581,7 +581,7 @@ body.dark-theme {
 }
 
 .store__title {
-  margin-bottom: 1rem;
+  margin: 1rem;
 }
 
 .store__description {
@@ -830,7 +830,7 @@ body.dark-theme {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 320px) {
   .container {
     margin-inline: 1rem;
   }
