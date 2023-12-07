@@ -769,7 +769,7 @@ body.dark-theme {
 } */
 
 .footer__title {
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin-bottom: var(--mb-2);
 }
 
@@ -778,7 +778,7 @@ body.dark-theme {
 }
 
 .footer__social-link {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: var(--first-color);
   margin: 0 var(--mb-2);
   transition: transform 0.5s;
