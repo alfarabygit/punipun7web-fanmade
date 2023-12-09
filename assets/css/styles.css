@@ -770,7 +770,7 @@ body.dark-theme {
 
 .footer__title {
   font-size: 1.3rem;
-  margin-bottom: var(--mb-2);
+  margin-bottom: var(--mb-4);
 }
 
 .footer__social {
@@ -790,6 +790,7 @@ body.dark-theme {
 
 .footer__copy {
   font-size: var(--small-font-size);
+  margin-top: var(--mb-2);
 }
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
