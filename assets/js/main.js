@@ -180,12 +180,13 @@ const sr = ScrollReveal({
 });
 
 //Home Page
-sr.reveal(`.home__data, .socialmedia__container, .footer`);
+sr.reveal(`.home__data, .footer`);
 sr.reveal(`.home__images`, { delay: 300 });
 
 //About Page
 sr.reveal(`.about__img`, { origin: "left" });
 sr.reveal(`.about__description`, { delay: 300, origin: "right" });
+sr.reveal(`.about__list`, { delay: 400, origin: "left" });
 sr.reveal(`.about__btn`, { delay: 500 });
 
 //Store page

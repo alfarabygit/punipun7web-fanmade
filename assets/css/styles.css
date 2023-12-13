@@ -405,7 +405,10 @@ body.dark-theme {
 .about__description {
   margin-bottom: 2rem;
 }
-
+.about__list {
+  color: var(--title-color);
+  margin-bottom: 1.5rem;
+}
 /*=============== CAREER ===============*/
 .career__tabs {
   display: flex;
@@ -1011,10 +1014,12 @@ body.dark-theme {
     padding: 0 4rem 0 0;
     margin-bottom: 2.5rem;
   }
+  .about__list {
+    margin-bottom: 3rem;
+  }
   .portfolio__container {
     grid-template-columns: repeat(4, 300px);
   }
-
   .store__container {
     grid-template-columns: 615px 500px;
     justify-content: space-between;
