@@ -90,7 +90,13 @@ let swiperHome = new Swiper(".home__swiper", {
 let swiperMerchandise = new Swiper(".merchandise__swiper", {
   loop: true,
   spaceBetween: 16,
+  speed: 5000,
   slidesPerView: "auto",
+
+  autoplay: {
+    delay: 1,
+    disableOnInteraction: false,
+  },
 
   breakpoints: {
     1200: {
