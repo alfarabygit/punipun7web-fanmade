@@ -87,20 +87,21 @@ let swiperHome = new Swiper(".home__swiper", {
 });
 
 /*=============== MERCHANDISE SWIPER ===============*/
-let swiperMerchandise = new Swiper(".merchandise__swiper", {
+let swiperPoster = new Swiper(".poster__swiper", {
   loop: true,
   spaceBetween: 16,
-  speed: 5000,
+  grabCursor: true,
   slidesPerView: "auto",
+  centeredSlides: "auto",
 
-  autoplay: {
-    delay: 1,
-    disableOnInteraction: false,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
-
   breakpoints: {
     1200: {
-      slidesPerView: 3,
+      slidesPerView: 4,
+      centeredSlides: false,
     },
     768: {
       slidesPerView: 2,
@@ -198,7 +199,7 @@ sr.reveal(`.about__btn`, { delay: 500 });
 //Store page
 sr.reveal(`.store__data`, { origin: "left" });
 sr.reveal(`.store__images`, { origin: "right" });
-sr.reveal(`.merchandise__container`, { origin: "bottom" });
+sr.reveal(`.poster__container, .merchandise__container`, { origin: "bottom" });
 
 //Event Page
 sr.reveal(`.events__container`, { delay: 500, origin: "bottom" });

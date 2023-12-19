@@ -611,6 +611,59 @@ body.dark-theme {
 }
 
 /*=============== MERCHANDISE ===============*/
+.poster__card {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  padding: 2rem;
+  overflow: hidden;
+  border: 2px solid var(--border-color);
+  transition: border 0.4s background-color 0.4s;
+}
+.poster__img {
+  width: 150px;
+  margin: 0 auto 0.75rem;
+}
+
+.poster__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.poster__details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.poster__discount {
+  color: var(--title-color);
+}
+
+.poster__card .button {
+  cursor: pointer;
+}
+
+/* Swiper class */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  background-color: var(--container-color);
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  transition: border 0.4s background-color 0.4s;
+}
+
 .merchandise__card {
   display: flex;
   align-items: center;
@@ -897,8 +950,18 @@ body.dark-theme {
     padding: 1rem;
   }
 }
+
+@media screen and (min-width: 350px) {
+  .merchandise__container {
+    padding-top: 4rem;
+  }
+}
+
 /* For medium devices */
 @media screen and (min-width: 450px) {
+  .poster__card {
+    width: 300px;
+  }
   .merchandise__card {
     width: 400px;
   }
@@ -1073,8 +1136,15 @@ body.dark-theme {
     width: 300px;
   }
 
-  .merchandise__container {
+  .poster__title {
+    font-size: var(--h3-font-size);
+  }
+  .poster__container {
     padding-top: 2rem;
+  }
+
+  .merchandise__container {
+    padding-top: 5rem;
   }
 
   .merchandise__card {
